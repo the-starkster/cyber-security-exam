@@ -3,7 +3,7 @@ import socket
 
 # Configurazione del server
 SERVER_IP = '192.168.1.190'
-SERVER_PORT = 1234
+SERVER_PORT = 1235
 
 def invia_al_server(dati):
     try:
