@@ -35,24 +35,29 @@ KEY_MAP = {
     44: 'z', 45: 'x', 46: 'c', 47: 'v', 48: 'b', 49: 'n', 50: 'm',
 
     # Simboli e caratteri speciali
+    56: '[RIGHT ALT]',
+    13: 'ì',
+    27: '+',
+    26: 'è',
+    12: '\'',
     28: '\n',  # Enter
     14: '[BACKSPACE]',  # Backspace
     1: '[ESC]',  # Escape
-    43: '-',  # Minus
+    43: 'ù',  # Minus
     45: '=',  # Equals
-    39: '[LEFT BRACKET]',  # Left Bracket
-    40: '[RIGHT BRACKET]',  # Right Bracket
+    39: 'ò',  # Left Bracket
+    40: 'à',  # Right Bracket
     51: ',',  # Comma
     52: '.',  # Period
-    53: '/',  # Slash
+    53: '-',  # Slash
     57: ' ',  # Space
-    42: '*',  # Asterisk
-    54: ';',  # Semicolon
+    42: '[LEFT ALT]',  # Asterisk
+    54: '[RIGHT ALT]',  # Semicolon
     55: '\'',  # Apostrophe
-    49: '[LEFT SHIFT]',  # Left Shift
+    49: 'n',  # Left Shift
     50: '[RIGHT SHIFT]',  # Right Shift
     29: '[LEFT CONTROL]',  # Left Control
-    57: '[RIGHT CONTROL]',  # Right Control
+    57: '[SPACE]',  # Right Control
     59: '[LEFT ALT]',  # Left Alt
     60: '[RIGHT ALT]',  # Right Alt
     65: '[TAB]',  # Tab
@@ -73,10 +78,13 @@ KEY_MAP = {
     92: '[DOWN ARROW]',
     93: '[LEFT ARROW]',
     94: '[RIGHT ARROW]',
-    100: '[PAGE UP]',  # Page Up
+    100: '[RIGHT ALT]',  # Page Up
     101: '[PAGE DOWN]',  # Page Down
     102: '[HOME]',  # Home
-    103: '[END]'  # End
+    103: '[UP ARROW]',  # End
+    106: '[RIGHT ARROW]',
+    108: '[DOWN ARROW]',
+    105: '[LEFT ARROW]'
 }
 
 # Trova il dispositivo di input corretto
