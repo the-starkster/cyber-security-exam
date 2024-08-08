@@ -35,44 +35,46 @@ KEY_MAP = {
     44: 'z', 45: 'x', 46: 'c', 47: 'v', 48: 'b', 49: 'n', 50: 'm',
 
     # Simboli e caratteri speciali
-    56: '[RIGHT ALT]',
+    41: '\\',
+    56: '[LEFT ALT]',
     13: 'ì',
     27: '+',
     26: 'è',
     12: '\'',
-    28: '\n',  # Enter
+    28: '[ENTER]',  # Enter
     14: '[BACKSPACE]',  # Backspace
+    15: '[TAB]',
     1: '[ESC]',  # Escape
     43: 'ù',  # Minus
-    45: '=',  # Equals
+    45: 'x',  # Equals
     39: 'ò',  # Left Bracket
     40: 'à',  # Right Bracket
     51: ',',  # Comma
     52: '.',  # Period
     53: '-',  # Slash
     57: ' ',  # Space
-    42: '[LEFT ALT]',  # Asterisk
-    54: '[RIGHT ALT]',  # Semicolon
+    58: '[CAPS LOCK]',
+    42: '[LEFT SHIFT]',  # Asterisk
+    54: '[RIGHT SHIFT]',  # Semicolon
     55: '\'',  # Apostrophe
     49: 'n',  # Left Shift
-    50: '[RIGHT SHIFT]',  # Right Shift
+    50: 'm',  # Right Shift
     29: '[LEFT CONTROL]',  # Left Control
     57: '[SPACE]',  # Right Control
-    59: '[LEFT ALT]',  # Left Alt
-    60: '[RIGHT ALT]',  # Right Alt
-    65: '[TAB]',  # Tab
-    66: '[CAPS LOCK]',  # Caps Lock
-    69: '[F1]',  # Function keys
-    70: '[F2]',
-    71: '[F3]',
-    72: '[F4]',
-    73: '[F5]',
-    74: '[F6]',
-    75: '[F7]',
-    76: '[F8]',
-    77: '[F9]',
-    78: '[F10]',
-    87: '[NUM LOCK]',  # Num Lock
+    59: '[F1]',  # Left Alt
+    60: '[F2]',  # Right Alt
+    61: '[F3]',
+    62: '[F4]',
+    63: '[F5]',
+    64: '[F6]',
+    65: '[F7]',  # Tab
+    66: '[F8]',  # Caps Lock
+    67: '[F9]',
+    68: '[F10]',
+    86: '<',
+    87: '[F11]',  # Num Lock
+    88: '[F12]',
+    111: '[CANC]',
     89: '[SCROLL LOCK]',  # Scroll Lock
     91: '[UP ARROW]',  # Arrow keys
     92: '[DOWN ARROW]',
